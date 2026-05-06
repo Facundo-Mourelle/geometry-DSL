@@ -23,7 +23,9 @@ Inicia un lienzo interactivo partiendo de una figura base. Te pedirá:
 - Elegir una imagen base (ej. `Triangulo`, `Cuadrado`, `Fish`).
 - Definir una resolución (presiona ENTER para usar la resolución por defecto de 1920x1080).
 Una vez abierta la ventana de `gloss`, puedes utilizar los siguientes controles de teclado para modificar la figura en tiempo real:
+
 Tecla | Comando | Acción resultante
+--- | --- | ---
 e | Espejar | Invierte la figura horizontalmente.
 r | Rotar | Rota la figura 90 grados.
 w | Rotar45 | Rota la figura 45 grados reduciendo su tamaño.
@@ -32,7 +34,7 @@ a | Apilar | Pone la figura actual encima de sí misma, dividiendo el espacio.
 j | Juntar | Pone la figura actual al lado de sí misma.
 c | Ciclar | Crea un cuadrado con la figura rotada i x 90º para i en {0, 1, 2, 3}.
 n | Encimar4 | Superpone la figura con sus cuatro rotaciones.
-+ / - | Zoom | Acerca (+) o aleja (-) la cámara.
+'+' / '-' | Zoom | Acerca (+) o aleja (-) la cámara.
 z | Deshacer | Revierte el dibujo a su estado/transformación anterior.
 o | Original | Restablece el dibujo a su forma inicial geométrica.
 q | Salir | Cierra el programa.
@@ -44,7 +46,7 @@ Para aquellos interesados en entender o extender el DSL, el código fuente está
 - `Basica/Comun.hs`: Interpretaciones base de figuras comunes utilizadas como ejemplos.
 - `Basica/Escher.hs`: Definición de combinadores complejos específicos para el diseño de mosaicos y la instanciación de las funciones para generar las teselaciones de M.C. Escher.
 ## Semántica Formal del DSL
-El lenguaje está parametrizado sobre una colección de figuras básicas. La semántica formal de una figura es una función que toma tres vectores *a, b, c* R^2 y produce una figura bidimensional, donde:
+El lenguaje está parametrizado sobre una colección de figuras básicas. La semántica formal de una figura es una función que toma tres vectores *a, b, c* en un plano y produce una figura bidimensional, donde:
 - a: indica el vector de desplazamiento del origen.
 - b: define el vector de ancho.
 - c: define el vector de alto.
