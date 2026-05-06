@@ -329,7 +329,7 @@ inicial (Conf name intBas dib w h r) = display win white . withGrid $ imagen
     withGrid p = pictures [p, grillaGris]
     grey = makeColorI 120 120 120 120
 
-win = InWindow "Paradigmas 2025 - Lab1" (500, 500) (0, 0)
+win = InWindow "Geometry DSL" (500, 500) (0, 0)
 
 main :: IO ()
 main = do
