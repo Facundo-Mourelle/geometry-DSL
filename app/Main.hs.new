@@ -1,0 +1,32 @@
+module Main where
+
+import Graphics.Gloss
+import Graphics.Gloss.Interface.IO.Game
+import System.Exit (exitSuccess)
+
+main :: IO ()
+main = playIO (InWindow "Paradigmas" (400,400) (0,0))
+       white       -- background color
+       60          -- frames per second
+       initialWorld
+       renderWorld
+       handleEvent
+       updateWorld
+
+data World = World
+
+initialWorld :: World
+initialWorld = World
+
+renderWorld :: World -> IO Picture
+renderWorld _ = return $ pictures [ color white $ circleSolid 100, scale 0.1 0.1 (Text "Press Q to quit")]
+
+handleEvent :: Event -> World -> IO World
+handleEvent event world =
+  case event of
+    EventKey (Char 'q') Down _ _ -> exitSuccess  -- quit on 'q'
+    _                            -> return world
+
+updateWorld :: Float -> World -> IO World
+updateWorld _ world = return world
+

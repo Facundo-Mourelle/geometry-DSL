@@ -1,0 +1,46 @@
+cabal-version:      3.0
+name:               skeleton2025
+version:            0.1.0.0
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             Maximo Angel Verzini Davico
+maintainer:         maximo.verzini@mi.unc.edu.ar
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+
+common warnings
+    ghc-options: -Wall
+
+library
+  hs-source-dirs:    src
+  exposed-modules:   Dibujo, Interp, Pred, Basica.Ejemplo, Basica.Comun, Basica.Escher
+  -- You can also include any modules in Basica if needed:
+  -- other-modules:   Basica.Ejemplo
+  build-depends:     
+      base ^>=4.17.2.1,
+      gloss ^>=1.13.2.2
+  default-language:  Haskell2010
+
+executable skeleton2025
+  hs-source-dirs:    app
+  main-is:           Main.hs
+  build-depends:
+      base ^>=4.17.2.1,
+      skeleton2025,
+      gloss ^>=1.13.2.2,
+      hspec >=2.7.10,
+      GLUT ^>= 2.7.0.16
+      -- if your executable uses hspec for any reason; otherwise you might remove it here
+  default-language:  Haskell2010
+
+test-suite skeleton2025-test
+  type:              exitcode-stdio-1.0
+  hs-source-dirs:    test
+  main-is:           Spec.hs
+  build-depends:
+      base ^>=4.17.2.1,
+      skeleton2025,     
+      hspec >=2.7.10,
+      gloss ^>=1.13.2.2
+  default-language:  Haskell2010
+
